@@ -8,3 +8,8 @@ bp = Blueprint('main', __name__)
 @bp.route('/index')
 def index_route():
     return index()
+
+#! Register
+@bp.route('/register', methods=['GET', 'POST'])
+def register_route():
+    return register()
