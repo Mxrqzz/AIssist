@@ -33,3 +33,28 @@ body.dark-mode {
     align-items: center;
     padding: 10px 20px;
 }
+
+.menu-superior ul li {
+    margin-right: 100px;
+    color: #1E90FF;
+}
+
+.menu-superior ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 10px;
+}
+ 
+.menu-superior li{
+    font-size: 24px;
+}
+
+.hero {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}

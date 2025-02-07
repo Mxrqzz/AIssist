@@ -13,3 +13,7 @@ def index_route():
 @bp.route('/register', methods=['GET', 'POST'])
 def register_route():
     return register()
+
+@bp.route('/login', methods=['GET', 'POST'])
+def login_route():
+    return login()
