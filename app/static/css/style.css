@@ -44,8 +44,8 @@ body.dark-mode {
     color: inherit;
     padding: 5px 10px;
 }
- 
-.menu-superior li{
+
+.menu-superior li {
     font-size: 24px;
 }
 
@@ -53,8 +53,99 @@ body.dark-mode {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.hero h1 {
-    font-size: 48px;
+
+h1 {
+    font-size: 50px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 300;
 }
+
+.content {
+    align-items: center;
+    display: flex;
+    width: 90%;
+
+}
+
+.content-one {
+    margin-left: 150px;
+    padding: 20px 20px;
+}
+
+.content-two {
+    margin-left: 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.content-two h2 {
+    font-size: 40px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+}
+
+
+.button {
+    background-color: transparent;
+    margin-top: 20px;
+    color: #1E90FF;
+    padding: 20px 20px;
+    font-size: 25px;
+    border: 2px solid #1E90FF;
+    border-radius: 35px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #1E90FF;
+    color: #E3F2FD;
+}
+
+.button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-group {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box {
+    padding: 10px;
+}
+
+.input-box input {
+    margin-top: 15px;
+    margin-bottom: 7px;
+    background: none;
+    border:  2px solid #1E90FF;
+    border-radius: 35px;
+    padding: 10px 20px;
+    width: 350px;
+    color: inherit;
+}   
