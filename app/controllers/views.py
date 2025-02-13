@@ -2,6 +2,7 @@ from flask import request, render_template, redirect, url_for, flash, session
 from flask_bcrypt import Bcrypt
 from app.database import create_connection, close_connection
 from app.controllers.usuario import Usuario
+from functools import wraps
 
 cripto = Bcrypt()
 
@@ -79,9 +80,26 @@ def login():
     return render_template("login.html")
 
 
+#! Logout
 def logout():
-    ...
-    
+    session.clear()
+    flash("Desconectado com sucesso", "sucess")
+    return redirect(url_for("main.login_route"))
 
+
+#! Controle de sessão
+def controller_session(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "user_id" not in session:
+            flash("Você precisa estar logado para acessar essa página", "error")
+            return redirect(url_for("main.login_route"))
+        return f(*args, **kwargs)
+
+    return decorated_function
+
+
+@controller_session
+#! Dashboard
 def dashboard():
     return render_template("dashboard.html")
