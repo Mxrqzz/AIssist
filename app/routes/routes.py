@@ -14,6 +14,17 @@ def index_route():
 def register_route():
     return register()
 
+#! Login
 @bp.route('/login', methods=['GET', 'POST'])
 def login_route():
     return login()
+
+#!logout
+@bp.route("/logout")
+def logout_route():
+    return logout()
+
+#! Dashboard
+@bp.route("/dashboard", methods=["GET"])
+def dashboard_route():
+    return dashboard()
