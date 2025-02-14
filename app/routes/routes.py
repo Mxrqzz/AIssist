@@ -28,3 +28,8 @@ def logout_route():
 @bp.route("/dashboard", methods=["GET"])
 def dashboard_route():
     return dashboard()
+
+#! Tasks
+@bp.route("/tasks", methods=['GET', 'POST'])
+def tasks_route():
+    return tasks()

@@ -102,4 +102,12 @@ def controller_session(f):
 @controller_session
 #! Dashboard
 def dashboard():
+    
+    
     return render_template("dashboard.html")
+
+
+@controller_session
+#! Tasks
+def tasks():
+    return render_template("tasks.html")
