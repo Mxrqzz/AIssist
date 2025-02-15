@@ -1,7 +1,59 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} AIssist - Tarefas {% endblock %} {%
+block content %}
+<div class="container-tasks">
 
-{% block title %} AIssist - Tarefas {% endblock %}
-
-{% block content %}
-<h1>Vasco</h1>
+<div class="task-form">
+  <h3>Adicionar nova tarefa</h3>
+  <form action="/tasks" class="formulario" method="POST">
+    <div class="input-group">
+      <div class="input-box">
+        <input
+          type="text"
+          id="name-task"
+          name="name-task"
+          placeholder="Nome da tarefa"
+          maxlength="40"
+          required
+        /><br />
+        <input
+          type="text"
+          id="info"
+          name="info"
+          placeholder="Descrição"
+          maxlength="255"
+        /><br />
+        <h3>
+            Prazo
+        </h3>
+        <input type="datetime-local" name="prazo" required/><br />
+        <div class="select-option">
+          <h3>Prioridade</h3>
+          <select name="priority"  required>
+              <option value="low">Baixa</option>
+              <option value="mid">Média</option>
+              <option value="high">Alta</option>
+          </select>
+      </div>
+      </div>
+    </div>
+    <button class="button-form" type="submit">Salvar nova tarefa</button>
+  </form>
+</div>
+<div class="list-task">
+  {% if tarefas %}
+        <div class="tasks">
+            <h2>Suas Tarefas</h2>
+            {% for tarefa in tarefas %}
+            <ul class="{{tarefa[4]}}">
+                    <li>{{ tarefa[1] }}</li>
+                    <li>{{tarefa [2]}}</li>
+                    <li>{{tarefa [3]}}</li>
+                  </ul>
+                {% endfor %}
+        </div>
+    {% else %}
+        <p>Você não tem tarefas no momento.</p>
+    {% endif %}
+</div>
+</div>
 {% endblock %}

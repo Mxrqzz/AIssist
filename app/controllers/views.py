@@ -2,6 +2,7 @@ from flask import request, render_template, redirect, url_for, flash, session
 from flask_bcrypt import Bcrypt
 from app.database import create_connection, close_connection
 from app.controllers.usuario import Usuario
+from app.controllers.task import Tarefa
 from functools import wraps
 
 cripto = Bcrypt()
@@ -102,12 +103,30 @@ def controller_session(f):
 @controller_session
 #! Dashboard
 def dashboard():
-    
-    
-    return render_template("dashboard.html")
+    tarefas = Tarefa.listar_tarefas(session["user_id"])
+    return render_template("dashboard.html", tarefas=tarefas)
 
 
 @controller_session
 #! Tasks
 def tasks():
-    return render_template("tasks.html")
+    
+    tarefas = Tarefa.listar_tarefas(session["user_id"])
+    
+    if request.method == "POST":
+
+        nome = request.form["name-task"]
+        descricao = request.form["info"]
+        prazo = request.form["prazo"]
+        prioridade = request.form["priority"]
+        criador_id = session["user_id"]
+
+        conexao = create_connection()
+        
+        if conexao:
+            tarefa = Tarefa(nome, descricao, prazo, prioridade, criador_id)
+            tarefa.salvar_dados()
+            flash("tarefa criada com sucesso", "success")
+            return redirect(url_for("main.tasks_route"))
+
+    return render_template("tasks.html", tarefas=tarefas)

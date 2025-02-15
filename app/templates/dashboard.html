@@ -3,7 +3,21 @@
 {% block title %}Dashboard - AIssist{% endblock %}
 
 {% block content %}
-    <h1>Olá, {{session['user_name']}}.</h1>
-    <h3>Aqui você verá suas tarefas, hábitos e mais!</h3>
+    <div class="title-top">
+        <h1>Olá, {{session['user_name']}}.</h1>
+        <h3>Aqui você verá suas tarefas, hábitos e mais!</h3>
+    </div>
+    {% if tarefas %}
+        <div class="tasks">
+            <h2>Suas Tarefas</h2>
+            <ul>
+                {% for tarefa in tarefas %}
+                    <li>{{ tarefa[1] }} - Prazo: {{tarefa[3]}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>Você não tem tarefas no momento.</p>
+    {% endif %}
     
 {% endblock %}

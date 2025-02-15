@@ -35,7 +35,7 @@ body.dark-mode {
 }
 
 .menu-superior ul li {
-    margin-right: 100px;
+    margin-right: 80px;
     color: #1E90FF;
 }
 
@@ -126,7 +126,11 @@ a {
 .container {
     margin-top: 50px;
     display: flex;
+   
     justify-content: center;
+    border: 2px solid #1E90FF;
+    padding: 30px 30px;
+    border-radius: 35px;
 }
 
 .form-side {
@@ -145,6 +149,7 @@ a {
 
 .input-box {
     padding: 10px;
+    margin-left: 0;
 }
 
 .input-box input {
@@ -193,4 +198,72 @@ a {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+.title-top {
+    margin-left: 100px;
+    text-align: left;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-left: 100px;
+    border: 2px solid #1E90FF;
+    padding: 30px 30px;
+    border-radius: 35px;
+    width: 25%;
+    height: 25%
+}
+
+.radio-option {
+    display: flex;
+    flex-direction: column;
+    text-justify: auto;
+}
+
+.select-option select{
+    border-radius: 35px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #1E90FF;
+    border: 2px solid #1E90FF;
+}
+
+.container-tasks {
+    display: flex;
+}
+
+.list-task {
+    margin-left: 100px;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column
+    
+}
+
+.tasks ul {
+    border: 2px solid #1E90FF;
+    padding: 20px 20px;
+    list-style: none;
+    border-radius: 20px;
+
+}
+
+.tasks li {
+    color: #1F2937;
+}
+
+.mid {
+    background-color: #4CAF50;
+}
+
+.low {background-color: #FFCC00;}
+
+.high {
+    background-color: #DF4D4D;
 }
